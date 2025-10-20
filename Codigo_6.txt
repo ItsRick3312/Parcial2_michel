@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class SalarioNeto {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.print("Salario base Mensual: ");
+        int SalAc = entrada.nextInt();
+
+        System.out.print("Porcentaje de Bonificación: ");
+        int PorBon = entrada.nextInt();
+
+        System.out.print("Porcentaje de Deducción de impuestos: ");
+        int PorDeIm = entrada.nextInt();
+
+        double MontoBon = (double) SalAc * PorBon / 100;
+
+        double SalT = (double) SalAc + MontoBon;
+
+        double DeduImp = (double) SalT * PorDeIm / 100;
+
+        double SalN = (double) SalT - DeduImp;
+
+        System.out.println("El salario base es: " + SalAc);
+        System.out.println("La bonificación Aplicada es: " + MontoBon); //
+        System.out.println("La deducción Aplicada es: " + DeduImp);
+        System.out.println("El salario Neto es: " + SalN);
+
+
+        if (SalN > 15000) {
+            System.out.println("El sueldo es competitivo");
+        } else {
+            System.out.println("No es sueldo competitivo");
+        }
+
+
+        entrada.close();
+    }
+}
